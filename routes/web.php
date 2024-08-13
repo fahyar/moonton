@@ -37,6 +37,10 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
         return Inertia::render('Prototype/Register');
         //return 'hello register';
     })->name('register');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Prototype/Dashboard');
+        //return 'hello dashboard';
+    })->name('dashboard');
 });
 
 require __DIR__.'/auth.php';
