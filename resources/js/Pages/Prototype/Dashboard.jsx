@@ -24,10 +24,10 @@ export default function Dashboard() {
                 />
             </Head>
             <div>
-                <div classNameName="font-semibold text-[22px] text-black mb-4">
+                <div className="font-semibold text-[22px] text-black mb-4">
                     Featured Movies
                 </div>
-                <Flickity classNameName="gap-[30px]" options={flickityOptions}>
+                <Flickity className="gap-[30px]" options={flickityOptions}>
                     {[1, 2, 3, 4].map((i) => (
                         <FeaturedMovies
                             key={i}
@@ -44,7 +44,7 @@ export default function Dashboard() {
                 <div className="font-semibold text-[22px] text-black mb-4">
                     Browse
                 </div>
-                <Flickity classNameName="gap-[30px]" options={flickityOptions}>
+                <Flickity className="gap-[30px]" options={flickityOptions}>
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                         <MovieCard
                             key={i}
