@@ -28,7 +28,7 @@ class MovieTableSeeder extends Seeder
                 'slug' => 'the-godfather',
                 'category' => 'Drama',
                 'video_url' => 'https://youtu.be/UaVTIH8mujA?si=DSOosliskCTt8WIj',
-                'thumbnail' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqDMhkR0minR9Ze99dS1q0iuFNIhnhYNNiTw&s',
+                'thumbnail' => 'https://upload.wikimedia.org/wikipedia/en/a/af/The_Godfather%2C_The_Game.jpg',
                 'rating' => 9.2,
                 'is_featured' => 0,
             ],

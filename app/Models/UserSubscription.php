@@ -18,7 +18,7 @@ class UserSubscription extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
-public function SubscriptionPlan(): BelongsTo
+public function subscriptionPlan(): BelongsTo
 {
     return $this->belongsTo(SubscriptionPlan::class);
 }
