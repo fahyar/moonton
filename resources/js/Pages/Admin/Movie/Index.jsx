@@ -1,11 +1,14 @@
 import Authenticated from "@/Layouts/Authenticated/index";
 import PrimaryButton from "@/Components/PrimaryButton";
 import FlashMessage from "@/Components/FlashMessage";
-import { Link } from "@inertiajs/react";
+import { Link, Head, useForm } from "@inertiajs/react";
 
 export default function Index({ auth, flashMessage, movies }) {
+    const { delete: destroy, put } = useForm();
+
     return (
         <Authenticated auth={auth}>
+            <Head title="List Of Movies" />
             <Link href={route("admin.dashboard.movie.create")}>
                 <PrimaryButton type="button" className="w-40 mb-8">
                     Insert New Movie
@@ -53,13 +56,33 @@ export default function Index({ auth, flashMessage, movies }) {
                                 </Link>
                             </td>
                             <td>
-                                <PrimaryButton
-                                    type="button"
-                                    variant="danger"
-                                    className="w-20"
+                                <div
+                                    onClick={() => {
+                                        movie.deleted_at
+                                            ? put(
+                                                  route(
+                                                      "admin.dashboard.movie.restore",
+                                                      movie.id
+                                                  )
+                                              )
+                                            : destroy(
+                                                  route(
+                                                      "admin.dashboard.movie.destroy",
+                                                      movie.id
+                                                  )
+                                              );
+                                    }}
                                 >
-                                    Delete
-                                </PrimaryButton>
+                                    <PrimaryButton
+                                        type="button"
+                                        variant="danger"
+                                        className="w-20"
+                                    >
+                                        {movie.deleted_at
+                                            ? "Restore"
+                                            : "Delete"}
+                                    </PrimaryButton>
+                                </div>
                             </td>
                         </tr>
                     ))}
